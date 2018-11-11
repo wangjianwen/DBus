@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN" monitorInterval="600">
+	<Appenders>
+		<Console name="Console" target="SYSTEM_OUT">
+			<PatternLayout pattern="[%date{ISO8601}] [%level] %logger{30} [%thread] [%X{TRACE_ID}] - %msg%n" />
+		</Console>
+	</Appenders>
+	<Loggers>
+		<Logger name="org.apache.storm" level="warn">
+			 <AppenderRef ref="Console" />
+		</Logger>
+		<Logger name="org.apache.zookeeper" level="warn">
+			<AppenderRef ref="Console" />
+		</Logger>
+		<Logger name="org.apache.curator" level="warn">
+			<AppenderRef ref="Console" />
+		</Logger>
+		<AsyncRoot level="INFO">
+			 <AppenderRef ref="Console" />
+		</AsyncRoot>
+	</Loggers>
+</Configuration>
